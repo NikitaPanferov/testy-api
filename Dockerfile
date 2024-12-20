@@ -16,6 +16,6 @@ RUN poetry config virtualenvs.create false \
 RUN openssl genrsa -out ./certs/jwt-private.pem 2048
 RUN openssl rsa -in ./certs/jwt-private.pem -outform PEM -pubout -out ./certs/jwt-public.pem
 
-EXPOSE 443
+EXPOSE 8000
 
-CMD ["poetry", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "443"]
+CMD ["poetry", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
