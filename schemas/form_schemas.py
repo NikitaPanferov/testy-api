@@ -18,7 +18,7 @@ class NewForm(BaseModel):
     title: str
     questions: List[NewQuestion]
     id: Optional[int] = Field(default=None)
-    isOpen: Optional[bool]
+    isOpen: Optional[bool] = True
 
 
 class NewFormRequest(BaseModel):
