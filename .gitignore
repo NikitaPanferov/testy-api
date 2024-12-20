@@ -1,0 +1,7 @@
+/certs/*.pem
+/.idea
+**/__pycache__
+pyrightconfig.json
+venv
+.env
+.DS_Store
