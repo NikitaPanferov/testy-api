@@ -11,12 +11,12 @@ router = APIRouter(
 )
 
 
-@router.get('/me', response_model=UserSchema)
+@router.get('/me/', response_model=UserSchema)
 async def me(user: current_user):
     return user
 
 
-@router.post("/login", response_model=AuthResponse)
+@router.post("/login/", response_model=AuthResponse)
 async def login(
     response: Response,
     user_cred: RequestLoginSchema,
@@ -33,7 +33,7 @@ async def login(
     return tokens
 
 
-@router.post("/signup", response_model=AuthResponse)
+@router.post("/signup/", response_model=AuthResponse)
 async def signup(
     response: Response,
     user_cred: RequestSignupSchema,
@@ -50,7 +50,7 @@ async def signup(
     return tokens
 
 
-@router.get("/refresh", response_model=AuthResponse)
+@router.get("/refresh/", response_model=AuthResponse)
 async def refresh_access_token(
     request: Request,
     response: Response,
@@ -65,7 +65,8 @@ async def refresh_access_token(
 
     return tokens
 
-@router.get("/logout")
+
+@router.get("/logout/")
 async def logout(
     response: Response
 ):
